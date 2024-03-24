@@ -29,7 +29,14 @@
     "types": [
       "@adonisjs/core",
       "@adonisjs/repl",
-      "@japa/preset-adonis/build/adonis-typings"
+      "@japa/preset-adonis/build/adonis-typings",
+      "@adonisjs/lucid",
+      "@adonisjs/auth",
+      "@adonisjs/mail",
+      "adonis5-scheduler",
+      "adonis-lucid-soft-deletes",
+      "@adonisjs/drive-s3",
+      "@cavai/adonis-queue"
     ]
   }
 }

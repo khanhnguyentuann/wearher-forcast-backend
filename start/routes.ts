@@ -19,7 +19,8 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import './routes/auth'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { hello: 'AdonisJS V5 Template' }
 })
