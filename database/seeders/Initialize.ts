@@ -11,12 +11,31 @@ export default class extends BaseSeeder {
       password: 'password123',
     })
 
+    let user = await User.create({
+      name: 'User',
+      email: 'user@local.com',
+      password: 'password321',
+    })
+
     // init roles table
-    await Role.create({
+    const adminRole = await Role.create({
       name: 'admin',
       createdBy: admin.id,
       setting: JSON.stringify({ permissions: 'full-permissions' }),
       description: 'full-permissions',
     })
+
+    const userRole = await Role.create({
+      name: 'user',
+      createdBy: admin.id,
+      setting: JSON.stringify({ permissions: 'no-permissions' }),
+      description: 'full-permissions',
+    })
+
+    admin.roleId = adminRole.id
+    await admin.save()
+
+    user.roleId = userRole.id
+    await user.save()
   }
 }

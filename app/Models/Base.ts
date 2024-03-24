@@ -8,6 +8,7 @@ import { compose } from '@ioc:Adonis/Core/Helpers'
 export default class MyBaseModel extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   public id: string
+
   @beforeCreate()
   public static async generateULID(base: MyBaseModel) {
     base.id = ulid()

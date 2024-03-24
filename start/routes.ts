@@ -20,6 +20,7 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 import './routes/auth'
+import './routes/favorite'
 
 Route.get('/', async () => {
   return { hello: 'AdonisJS V5 Template' }
